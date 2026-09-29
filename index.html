@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HEDWIG — Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <a class="brand" href="./" aria-label="HEDWIG home">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 40 40" role="img">
+              <path class="owl-body" d="M8 12.5 12.5 7l7.5 3 7.5-3 4.5 5.5V27c0 5-4.6 8-12 8S8 32 8 27V12.5Z" />
+              <path class="owl-face" d="M8.5 16.5c2.2-4.4 5.8-6.5 11.5-6.5s9.3 2.1 11.5 6.5c-2.2 5-5.8 7.5-11.5 7.5s-9.3-2.5-11.5-7.5Z" />
+              <circle class="owl-eye" cx="15.5" cy="16.5" r="3.4" />
+              <circle class="owl-eye" cx="24.5" cy="16.5" r="3.4" />
+              <circle class="owl-pupil" cx="15.5" cy="16.5" r="1.3" />
+              <circle class="owl-pupil" cx="24.5" cy="16.5" r="1.3" />
+              <path class="owl-beak" d="m18 20 2-2 2 2-2 3-2-3Z" />
+              <path class="owl-wing" d="M8.5 25c2.7-.5 4.7.2 6 2.2-2.4.8-4.7.2-6-2.2Zm23 0c-2.7-.5-4.7.2-6 2.2 2.4.8 4.7.2 6-2.2Z" />
+            </svg>
+          </span>
+          HEDWIG
+        </a>
+        <span class="tagline">✦ Enchanted translations ✦</span>
+      </header>
+
+      <section class="intro">
+        <p class="eyebrow">THE SPELL OF LANGUAGE</p>
+        <h1>Words have<br /><em>no borders.</em></h1>
+        <p>Choose your languages, write your message, and let HEDWIG carry your words across the world.</p>
+      </section>
+
+      <section class="translator" aria-label="Translator">
+        <div class="language-row">
+          <label>From
+            <select id="source-language" aria-label="Source language">
+              <option value="en" selected>English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option><option value="de">German</option>
+              <option value="it">Italian</option><option value="pt">Portuguese</option>
+              <option value="hi">Hindi</option><option value="ja">Japanese</option>
+              <option value="ko">Korean</option><option value="zh-CN">Chinese</option>
+              <option value="ar">Arabic</option><option value="ru">Russian</option>
+            </select>
+          </label>
+          <button id="swap-button" class="swap" type="button" aria-label="Swap languages" title="Swap languages">⇄</button>
+          <label>To
+            <select id="target-language" aria-label="Target language">
+              <option value="es">Spanish</option><option value="en">English</option>
+              <option value="fr">French</option><option value="de">German</option>
+              <option value="it">Italian</option><option value="pt">Portuguese</option>
+              <option value="hi">Hindi</option><option value="ja">Japanese</option>
+              <option value="ko">Korean</option><option value="zh-CN">Chinese</option>
+              <option value="ar">Arabic</option><option value="ru">Russian</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="panels">
+          <div class="panel input-panel">
+            <textarea id="source-text" maxlength="5000" placeholder="Write something to translate..." aria-label="Text to translate"></textarea>
+            <div class="panel-footer"><span id="counter">0 / 5,000</span><button id="clear-button" class="small-button" type="button" title="Clear">×</button></div>
+          </div>
+          <div class="panel output-panel" aria-live="polite">
+            <p id="translated-text" class="placeholder">Your translation will appear here.</p>
+            <div class="panel-footer"><span id="status"></span><div>
+              <button id="speak-button" class="small-button" type="button" title="Read aloud" aria-label="Read aloud" disabled>◖</button>
+              <button id="copy-button" class="small-button" type="button" title="Copy translation" aria-label="Copy translation" disabled>⧉</button>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <span class="api-status"><i></i> Powered by MyMemory Translation API</span>
+          <button id="translate-button" class="translate" type="button">Translate <b>→</b></button>
+        </div>
+      </section>
+      <p class="shortcut"><kbd>⌘</kbd><kbd>Enter</kbd> to translate</p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
